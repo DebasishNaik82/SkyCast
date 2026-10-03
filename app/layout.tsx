@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'weather in india', 'current weather', '7 day weather forecast', 'hourly weather forecast', 'weather app'
   ],
   other: {
-    'google-adsense-account': 'ca-pub-7850864713634423',
+    'google-adsense-account': 'ca-pub-5165373830014732',
     '7da624aa55fbca8bd846346fe7de8b9802293d97': '7da624aa55fbca8bd846346fe7de8b9802293d97',
   },
 };
@@ -32,6 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable}`}>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-5165373830014732" />
+        <Script
+          id="google-adsense"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5165373830014732"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TFR2EZ6RX5"
@@ -46,12 +54,6 @@ export default function RootLayout({
             gtag('config', 'G-TFR2EZ6RX5');
           `}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7850864713634423"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',

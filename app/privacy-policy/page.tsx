@@ -7,8 +7,8 @@ import { Shield, Eye, Database, Lock, Cookie, UserCheck, Mail } from 'lucide-rea
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - SkyCast Weather Intelligence',
-  description: 'SkyCast Privacy Policy detailing cookie usage, Google AdSense ad serving, third-party analytics, log files, GDPR, CCPA rights, and user data safety.',
-  keywords: ['Privacy Policy', 'SkyCast privacy policy', 'Google AdSense cookies', 'DART cookies', 'GDPR weather app'],
+  description: 'SkyCast Privacy Policy detailing cookie usage, analytics, log files, GDPR, CCPA rights, and user data safety.',
+  keywords: ['Privacy Policy', 'SkyCast privacy policy', 'weather app privacy', 'GDPR weather app'],
 };
 
 export default function PrivacyPolicyPage() {
@@ -47,20 +47,18 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          {/* Google AdSense & Cookies - CRITICAL FOR ADSENSE */}
+          {/* Cookies & Local Storage */}
           <section className="liquid-glass p-8 rounded-3xl border border-white/10 shadow-2xl">
             <div className="flex items-center gap-3 mb-4 text-emerald-400">
               <Cookie size={24} />
-              <h2 className="text-xl font-black uppercase tracking-tight text-white">2. Google AdSense & DoubleClick DART Cookies</h2>
+              <h2 className="text-xl font-black uppercase tracking-tight text-white">2. Cookies & Local Storage</h2>
             </div>
             <p className="mb-4">
-              Google is a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to <code>https://skycast-weather.vercel.app</code> and other sites on the internet.
+              Like any other website, SkyCast uses standard browser cookies and local storage to store information including visitors&apos; preferences and recent location searches to optimize user experience and provide personalized meteorological forecasts.
             </p>
-            <ul className="list-disc list-inside space-y-2 text-slate-400 text-xs">
-              <li>Google, as a third-party vendor, uses cookies to serve ads on SkyCast.</li>
-              <li>Google&apos;s use of the DART cookie enables it to serve ads to our users based on previous visits to our site and other sites on the Internet.</li>
-              <li>Visitors may choose to decline or opt out of the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline">https://policies.google.com/technologies/ads</a>.</li>
-            </ul>
+            <p>
+              You can choose to disable cookies through your individual browser options. Detailed information about cookie management with specific web browsers can be found at the browsers&apos; respective websites.
+            </p>
           </section>
 
           {/* Log Files */}
@@ -74,25 +72,11 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          {/* Advertising Partners Privacy Policies */}
-          <section className="liquid-glass p-8 rounded-3xl border border-white/10 shadow-2xl">
-            <div className="flex items-center gap-3 mb-4 text-emerald-400">
-              <Eye size={24} />
-              <h2 className="text-xl font-black uppercase tracking-tight text-white">4. Advertising Partners Privacy Policies</h2>
-            </div>
-            <p className="mb-4">
-              Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on SkyCast, which are sent directly to users&apos; browsers. They automatically receive your IP address when this occurs.
-            </p>
-            <p>
-              Note that SkyCast has no access to or control over these cookies that are used by third-party advertisers. You should consult the respective Privacy Policies of these third-party ad servers for more detailed information.
-            </p>
-          </section>
-
           {/* GDPR Data Protection Rights */}
           <section className="liquid-glass p-8 rounded-3xl border border-white/10 shadow-2xl">
             <div className="flex items-center gap-3 mb-4 text-emerald-400">
               <UserCheck size={24} />
-              <h2 className="text-xl font-black uppercase tracking-tight text-white">5. GDPR & CCPA Privacy Rights</h2>
+              <h2 className="text-xl font-black uppercase tracking-tight text-white">4. GDPR & CCPA Privacy Rights</h2>
             </div>
             <p className="mb-4">
               We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
@@ -109,7 +93,7 @@ export default function PrivacyPolicyPage() {
           <section className="liquid-glass p-8 rounded-3xl border border-white/10 shadow-2xl">
             <div className="flex items-center gap-3 mb-4 text-emerald-400">
               <Mail size={24} />
-              <h2 className="text-xl font-black uppercase tracking-tight text-white">6. Consent & Contact</h2>
+              <h2 className="text-xl font-black uppercase tracking-tight text-white">5. Consent & Contact</h2>
             </div>
             <p>
               By using our website, you hereby consent to our Privacy Policy and agree to its terms. If you wish to submit a privacy inquiry or data request, email us at <a href="mailto:skycast.app@outlook.com" className="text-emerald-400 underline">skycast.app@outlook.com</a> or refer to our <Link href="/contact" className="text-emerald-400 underline">Contact & Support page</Link>.

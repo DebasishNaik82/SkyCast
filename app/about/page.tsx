@@ -86,7 +86,7 @@ export default function AboutPage() {
             <ul className="space-y-4 text-slate-300 font-bold text-sm">
               <li className="flex items-start gap-3">
                 <CheckCircle className="text-emerald-400 shrink-0 mt-0.5" size={18} />
-                <span><strong>No Deceptive Ads:</strong> We follow Google Publisher Policies to ensure a safe, unobtrusive browsing experience without popups or unwanted redirects.</span>
+                <span><strong>Clean User Experience:</strong> We ensure a safe, unobtrusive browsing experience without intrusive popups or unwanted redirects.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="text-emerald-400 shrink-0 mt-0.5" size={18} />

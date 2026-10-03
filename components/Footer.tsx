@@ -64,7 +64,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Policies (Critical for AdSense) */}
+          {/* Legal & Policies */}
           <div>
             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-400 mb-4">
               Legal & Policies
