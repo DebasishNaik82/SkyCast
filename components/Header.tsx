@@ -11,11 +11,16 @@ export default function Header() {
     <header className="w-full max-w-6xl mx-auto pt-4 pb-2 px-4 relative z-50">
       <nav className="liquid-glass rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-xl">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 transition-all border border-emerald-500/20">
-            <CloudSun className="w-6 h-6 text-emerald-400" />
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 flex items-center justify-center transition-all group-hover:scale-110">
+            <img 
+              src="/logo.svg" 
+              alt="SkyCast Logo" 
+              className="w-full h-full object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <span className="text-xl font-black tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+          <span className="text-3xl font-black tracking-tighter text-white group-hover:text-emerald-400 transition-colors">
             SkyCast
           </span>
         </Link>
@@ -55,14 +60,14 @@ export default function Header() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-2 liquid-glass rounded-2xl p-4 border border-white/10 shadow-2xl space-y-2 text-sm font-bold text-slate-200">
-          <Link
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-emerald-500/10 hover:text-emerald-400 transition-all"
-          >
-            <CloudSun size={18} className="text-emerald-400" />
-            Home Dashboard
-          </Link>
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-emerald-500/10 hover:text-emerald-400 transition-all"
+            >
+              <img src="/logo.svg" alt="SkyCast" className="w-5 h-5" referrerPolicy="no-referrer" />
+              Home Dashboard
+            </Link>
           <Link
             href="/about"
             onClick={() => setMobileMenuOpen(false)}

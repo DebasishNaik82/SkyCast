@@ -22,11 +22,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Info */}
           <div className="md:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <CloudSun className="w-6 h-6 text-emerald-400" />
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 flex items-center justify-center transition-all group-hover:scale-110">
+                <img src="/logo.svg" alt="SkyCast Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
               </div>
-              <span className="text-xl font-black tracking-tight text-white">
+              <span className="text-3xl font-black tracking-tighter text-white">
                 SkyCast
               </span>
             </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs font-bold text-slate-300">
               <li>
                 <Link href="/" className="hover:text-emerald-400 transition-colors flex items-center gap-2">
-                  <CloudSun size={14} className="text-slate-500" /> Home Dashboard
+                  <img src="/logo.svg" alt="SkyCast" className="w-4 h-4" referrerPolicy="no-referrer" /> Home Dashboard
                 </Link>
               </li>
               <li>

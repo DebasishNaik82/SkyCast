@@ -43,7 +43,7 @@ export default function TermsPage() {
               <h2 className="text-xl font-black uppercase tracking-tight text-white">1. Acceptance of Terms</h2>
             </div>
             <p>
-              By accessing and browsing <strong>SkyCast</strong> (located at <code>https://skycast-weather.vercel.app</code>), you accept and agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you must discontinue use of this website immediately.
+              By accessing and browsing <strong>SkyCast</strong> (located at <code>https://skycast-wd.vercel.app</code>), you accept and agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you must discontinue use of this website immediately.
             </p>
           </section>
 

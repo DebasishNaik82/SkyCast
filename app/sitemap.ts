@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://skycast-weather.vercel.app'
+  const baseUrl = 'https://skycast-wd.vercel.app'
   const popularCities = [
     'Delhi', 'Mumbai', 'Bengaluru', 'Chennai', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad', 'Jaipur', 'Lucknow',
     'Katni', 'Rewa', 'Satna', 'Sambalpur', 'Koraput', 'Dindigul', 'Kurnool', 'Nizamabad', 

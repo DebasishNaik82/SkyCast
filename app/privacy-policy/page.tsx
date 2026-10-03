@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-black uppercase tracking-tight text-white">1. Introduction</h2>
             </div>
             <p>
-              This Privacy Policy document contains types of information that is collected and recorded by <strong>SkyCast</strong> (accessible from <span className="text-emerald-400">https://skycast-weather.vercel.app</span>) and how we use it. If you have additional questions or require more information about our Privacy Policy, contact us at <a href="mailto:skycast.app@outlook.com" className="text-emerald-400 underline">skycast.app@outlook.com</a> or visit our <Link href="/contact" className="text-emerald-400 underline">Contact & Support page</Link>.
+              This Privacy Policy document contains types of information that is collected and recorded by <strong>SkyCast</strong> (accessible from <span className="text-emerald-400">https://skycast-wd.vercel.app</span>) and how we use it. If you have additional questions or require more information about our Privacy Policy, contact us at <a href="mailto:skycast.app@outlook.com" className="text-emerald-400 underline">skycast.app@outlook.com</a> or visit our <Link href="/contact" className="text-emerald-400 underline">Contact & Support page</Link>.
             </p>
           </section>
 
