@@ -6,14 +6,42 @@ import Footer from '@/components/Footer';
 import { Shield, Eye, Database, Lock, Cookie, UserCheck, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - SkyCast Weather Intelligence',
-  description: 'SkyCast Privacy Policy detailing cookie usage, analytics, log files, GDPR, CCPA rights, and user data safety.',
-  keywords: ['Privacy Policy', 'SkyCast privacy policy', 'weather app privacy', 'GDPR weather app'],
+  title: 'Privacy Policy | SkyCast Weather Dashboard',
+  description: 'SkyCast Weather Dashboard Privacy Policy detailing cookie usage, local storage, analytics, log files, GDPR/CCPA data rights, and user privacy safety.',
+  keywords: ['Privacy Policy', 'SkyCast privacy policy', 'weather app privacy', 'GDPR weather app', 'Skycast Weather Dashboard'],
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'SkyCast Weather Dashboard',
+                'item': 'https://skycast-wd.vercel.app'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Privacy Policy',
+                'item': 'https://skycast-wd.vercel.app/privacy-policy'
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20 animate-liquid" />

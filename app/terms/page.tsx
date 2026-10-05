@@ -6,14 +6,42 @@ import Footer from '@/components/Footer';
 import { FileText, Check, AlertCircle, Scale, Globe2, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions - SkyCast Weather Intelligence',
-  description: 'Terms and Conditions governing the use of SkyCast Weather Intelligence website and meteorological forecasting services.',
-  keywords: ['Terms and Conditions', 'SkyCast terms of use', 'weather service terms'],
+  title: 'Terms & Conditions | SkyCast Weather Dashboard',
+  description: 'Terms and Conditions governing the use of SkyCast Weather Dashboard website, permitted usage policies, and meteorological forecasting service agreement.',
+  keywords: ['Terms and Conditions', 'SkyCast terms of use', 'weather service terms', 'Skycast Weather Dashboard'],
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'SkyCast Weather Dashboard',
+                'item': 'https://skycast-wd.vercel.app'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Terms & Conditions',
+                'item': 'https://skycast-wd.vercel.app/terms'
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20 animate-liquid" />

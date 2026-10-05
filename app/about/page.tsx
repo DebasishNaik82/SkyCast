@@ -5,14 +5,42 @@ import Footer from '@/components/Footer';
 import { Info, Shield, Zap, Globe, Cpu, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About SkyCast - High-Precision Weather Intelligence',
-  description: 'Learn about SkyCast, our mission, meteorological data sources, and real-time weather forecasting technology powered by the Open-Meteo API.',
-  keywords: ['About SkyCast', 'SkyCast weather app', 'meteorological intelligence', 'weather forecast technology', 'Open-Meteo weather data'],
+  title: 'About SkyCast Weather Dashboard | High-Precision Meteorological Intelligence',
+  description: 'Learn about SkyCast Weather Dashboard, our mission, advanced meteorological models, and high-precision forecasting engine powered by Open-Meteo.',
+  keywords: ['About SkyCast', 'SkyCast weather app', 'meteorological intelligence', 'weather forecast technology', 'Open-Meteo weather data', 'Skycast Weather Dashboard'],
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'SkyCast Weather Dashboard',
+                'item': 'https://skycast-wd.vercel.app'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'About Us',
+                'item': 'https://skycast-wd.vercel.app/about'
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Liquid Background */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20 animate-liquid" />

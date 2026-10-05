@@ -206,53 +206,63 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-5xl my-8 flex flex-col md:flex-row md:items-center justify-between gap-6"
       >
-
-        <div className="relative w-full md:w-96 group">
-          <form onSubmit={handleSearch} className="relative">
-            <input 
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search city..."
-              className="w-full liquid-glass rounded-2xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all placeholder:text-slate-500"
-            />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-emerald-400 transition-colors" />
-          </form>
-
-          <AnimatePresence>
-            {suggestions.length > 0 && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="absolute top-full left-0 w-full mt-2 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-50 text-slate-200"
-              >
-                {suggestions.map((s, idx) => {
-                  const fullName = [s.name, s.admin1, s.country].filter(Boolean).join(', ');
-                  const subText = [s.admin1, s.country].filter(Boolean).join(', ');
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => router.push(`/${s.name.toLowerCase()}`)}
-                      className="w-full px-4 py-3.5 text-left hover:bg-slate-800 transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
-                    >
-                      <MapPin className="w-4 h-4 text-slate-500" />
-                      <span>{s.name}{subText ? ', ' : ''}<span className="text-slate-400 text-sm">{subText}</span></span>
-                    </button>
-                  );
-                })}
-              </motion.div>
-            )}
-          </AnimatePresence>
+        <div className="flex flex-col">
+          <span className="text-xs font-black uppercase tracking-[0.3em] text-emerald-400 mb-1.5 block">
+            Meteorological Intelligence
+          </span>
+          <h1 className="text-4xl md:text-5xl font-black tracking-tighter bg-gradient-to-r from-emerald-400 to-green-300 bg-clip-text text-transparent">
+            Live Weather Dashboard
+          </h1>
         </div>
 
-        <button 
-          onClick={handleUseLocation}
-          className="flex items-center gap-2 px-6 py-3.5 liquid-glass-intense hover:bg-white/10 rounded-2xl font-semibold transition-all shadow-lg active:scale-95 group"
-        >
-          <Navigation className="w-4 h-4 text-emerald-400 group-hover:rotate-45 transition-transform" />
-          Current Location
-        </button>
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto shrink-0">
+          <div className="relative w-full sm:w-80 group">
+            <form onSubmit={handleSearch} className="relative">
+              <input 
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search city..."
+                className="w-full liquid-glass rounded-2xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all placeholder:text-slate-500 font-bold"
+              />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-emerald-400 transition-colors" />
+            </form>
+
+            <AnimatePresence>
+              {suggestions.length > 0 && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="absolute top-full left-0 w-full mt-2 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-50 text-slate-200"
+                >
+                  {suggestions.map((s, idx) => {
+                    const fullName = [s.name, s.admin1, s.country].filter(Boolean).join(', ');
+                    const subText = [s.admin1, s.country].filter(Boolean).join(', ');
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => router.push(`/${s.name.toLowerCase()}`)}
+                        className="w-full px-4 py-3.5 text-left hover:bg-slate-800 transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
+                      >
+                        <MapPin className="w-4 h-4 text-slate-500" />
+                        <span>{s.name}{subText ? ', ' : ''}<span className="text-slate-400 text-sm">{subText}</span></span>
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <button 
+            onClick={handleUseLocation}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 liquid-glass-intense hover:bg-white/10 rounded-2xl font-bold transition-all shadow-lg active:scale-95 group"
+          >
+            <Navigation className="w-4 h-4 text-emerald-400 group-hover:rotate-45 transition-transform" />
+            Current Location
+          </button>
+        </div>
       </motion.div>
 
       {/* Popular Regional Forecasts (SEO Internal Linking) */}

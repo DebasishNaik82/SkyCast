@@ -6,14 +6,42 @@ import Footer from '@/components/Footer';
 import { AlertTriangle, Database, Info, ShieldAlert, LifeBuoy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer - SkyCast Weather Intelligence',
-  description: 'SkyCast Meteorological Disclaimer detailing weather forecast accuracy limits, Open-Meteo data source attribution, and emergency weather advice.',
-  keywords: ['Weather Disclaimer', 'SkyCast disclaimer', 'meteorological data accuracy', 'Open-Meteo attribution'],
+  title: 'Disclaimer | SkyCast Weather Dashboard',
+  description: 'SkyCast Weather Dashboard Meteorological Disclaimer detailing weather forecast accuracy limits, Open-Meteo data source attribution, and severe weather safety advice.',
+  keywords: ['Weather Disclaimer', 'SkyCast disclaimer', 'meteorological data accuracy', 'Open-Meteo attribution', 'Skycast Weather Dashboard'],
+  alternates: {
+    canonical: '/disclaimer',
+  },
 };
 
 export default function DisclaimerPage() {
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'SkyCast Weather Dashboard',
+                'item': 'https://skycast-wd.vercel.app'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Disclaimer',
+                'item': 'https://skycast-wd.vercel.app/disclaimer'
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20 animate-liquid" />

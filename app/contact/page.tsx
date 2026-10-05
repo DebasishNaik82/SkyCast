@@ -1,14 +1,47 @@
-'use client';
-
 import React from 'react';
+import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Mail, Clock, MapPin, Info, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata: Metadata = {
+  title: 'Contact & Support | SkyCast Weather Dashboard',
+  description: 'Get in touch with the SkyCast Weather Dashboard support team for technical help, feedback, and privacy inquiries regarding our real-time weather forecasts.',
+  keywords: ['SkyCast support', 'contact SkyCast', 'weather app feedback', 'meteorological help'],
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'SkyCast Weather Dashboard',
+                'item': 'https://skycast-wd.vercel.app'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Contact & Support',
+                'item': 'https://skycast-wd.vercel.app/contact'
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Background Blobs */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20 animate-liquid" />

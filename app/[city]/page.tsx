@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Weather in ${capitalizedCity} Today - SkyCast Real-Time Forecast`,
     description: `Get real-time weather updates, temperature, AQI, and 7-day forecast for ${capitalizedCity}. Stay updated with SkyCast's high-precision meteorological intelligence.`,
     keywords: [`weather in ${capitalizedCity}`, `${capitalizedCity} weather today`, `tomorrow weather ${capitalizedCity}`, `SkyCast ${capitalizedCity}`],
+    alternates: {
+      canonical: `/${city.toLowerCase()}`,
+    },
   };
 }
 
@@ -103,6 +106,52 @@ export default async function WeatherCityPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-[#020603] text-slate-100 font-sans p-4 md:p-8 flex flex-col items-center relative isolation-auto">
+      {/* JSON-LD Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                  {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'SkyCast Weather Dashboard',
+                    'item': 'https://skycast-wd.vercel.app'
+                  },
+                  {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': `${locationName} Weather Today`,
+                    'item': `https://skycast-wd.vercel.app/${city.toLowerCase()}`
+                  }
+                ]
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebApplication',
+                '@id': `https://skycast-wd.vercel.app/${city.toLowerCase()}#webapp`,
+                'url': `https://skycast-wd.vercel.app/${city.toLowerCase()}`,
+                'name': `Weather in ${locationName} Today - SkyCast`,
+                'applicationCategory': 'WeatherApplication',
+                'operatingSystem': 'All',
+                'description': `Get real-time weather updates, temperature, AQI, and 7-day forecast for ${locationName}. Stay updated with SkyCast's high-precision meteorological intelligence.`,
+                'browserRequirements': 'Requires HTML5 support',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'INR'
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden -z-10">
         <div className="liquid-glow w-[500px] h-[500px] bg-emerald-600/10 -top-20 -left-20" />
