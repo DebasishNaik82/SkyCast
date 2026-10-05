@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     'google-adsense-account': 'ca-pub-5165373830014732',
     '7da624aa55fbca8bd846346fe7de8b9802293d97': '7da624aa55fbca8bd846346fe7de8b9802293d97',
   },
+  verification: {
+    google: '9jZDM8686DPhJ6g41RMg1_wh90fp_fPl08gN23BQIOw',
+  },
 };
 
 export default function RootLayout({
@@ -57,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable}`}>
       <head>
+        <meta name="google-site-verification" content="9jZDM8686DPhJ6g41RMg1_wh90fp_fPl08gN23BQIOw" />
         <meta name="google-adsense-account" content="ca-pub-5165373830014732" />
         <Script
           id="google-adsense"
