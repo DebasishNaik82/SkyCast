@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const cityUrls = popularCities.map((city) => ({
-    url: `${baseUrl}/${city.toLowerCase()}`,
+    url: `${baseUrl}/weather/${city.toLowerCase()}`,
     lastModified: new Date(),
     changeFrequency: 'hourly' as const,
     priority: 0.8,

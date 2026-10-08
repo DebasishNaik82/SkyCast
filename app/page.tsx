@@ -134,7 +134,7 @@ export default function Home() {
       const data = await response.json();
       if (data.results && data.results.length > 0) {
         const top = data.results[0];
-        router.push(`/${top.name.toLowerCase()}`);
+        router.push(`/weather/${top.name.toLowerCase()}`);
       } else {
         setError('Location not found.');
       }
@@ -242,7 +242,7 @@ export default function Home() {
                     return (
                       <button
                         key={idx}
-                        onClick={() => router.push(`/${s.name.toLowerCase()}`)}
+                        onClick={() => router.push(`/weather/${s.name.toLowerCase()}`)}
                         className="w-full px-4 py-3.5 text-left hover:bg-slate-800 transition-colors border-b border-white/5 last:border-0 flex items-center gap-3"
                       >
                         <MapPin className="w-4 h-4 text-slate-500" />
@@ -296,7 +296,7 @@ export default function Home() {
                 {visibleCities.map((city) => (
                   <Link 
                     key={city} 
-                    href={`/${city.toLowerCase()}`}
+                    href={`/weather/${city.toLowerCase()}`}
                     className="px-5 py-2.5 bg-white/[0.03] border border-white/5 rounded-full text-[11px] font-bold text-slate-400 hover:border-emerald-500/30 hover:text-emerald-400 transition-all hover:bg-emerald-500/5"
                   >
                     {city}

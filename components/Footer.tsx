@@ -102,7 +102,7 @@ export default function Footer() {
               {topCities.map((city) => (
                 <Link
                   key={city.slug}
-                  href={`/${city.slug}`}
+                  href={`/weather/${city.slug}`}
                   className="hover:text-emerald-400 transition-colors flex items-center gap-1.5"
                 >
                   <MapPin size={12} className="text-slate-500" /> {city.name}
